@@ -95,7 +95,7 @@ const fetchData = (url) => {
 const myWeather = (position) => {
     const latitude = position.coords.latitude
     const longitude = position.coords.longitude
-    const url = `http://localhost:3000/weather?longitude=${longitude}&latitude=${latitude}`
+    const url = `/weather?longitude=${longitude}&latitude=${latitude}`
     fetchData(url)
 }
 
@@ -105,7 +105,7 @@ weatherForm.addEventListener('submit', (e) => {
     e.preventDefault()
     console.log(cityMesg.textContent)
     const location = search.value
-    const url = `http://localhost:3000/weather?address=${location}`
+    const url = `/weather?address=${location}`
     cityMesg.textContent = 'Loading...'
     countryMesg.textContent = ''
     fetchData(url)
