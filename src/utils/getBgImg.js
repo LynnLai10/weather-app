@@ -4,7 +4,9 @@ const getBgImg = (callback) => {
     const url = 'https://api.unsplash.com/photos/random?query=nature&orientation=landscape&per_page=1&client_id=vTZlMYiWsZObTT5shoxFjZx0CHPmQW_y0itXGU-N8tg'
     request({ url, json: true }, (error, response) => {
         if (error) {
-            callback('Unable to connect the location server!', undefined)
+            callback('Unable to connect the image server!', undefined)
+        } else if (!response.body.urls) {
+            callback('Unable to get image temporarily!', undefined)
         } else {
             callback(undefined, {
                 url: response.body.urls.regular,
