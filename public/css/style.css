@@ -12,7 +12,6 @@ body {
 }
 
 .bg-container {
-    background: url('../img/bg.jpg');
     height: 100%;
     background-size: cover;
     width: 100%;
@@ -21,7 +20,7 @@ body {
     left: 0;
     transform: translate(0, 0);
     overflow: hidden;
-    color: rgb(218, 216, 216);
+    color: rgb(255, 255, 255);
 }
 
 .searchBar {
@@ -30,7 +29,6 @@ body {
 }
 
 .bg-container .content {
-    background: white;
     width: 80%;
     height: 80%;
     border-radius: 10px;
@@ -43,7 +41,7 @@ body {
 }
 
 .bg-container .img {
-    background: url('../img/bg.jpg') no-repeat;
+    background-size: no-repeat;
     background-size: cover;
     height: 100%;
 }
@@ -69,9 +67,19 @@ body {
     background: rgba(168, 167, 167, 0.6);
 }
 
-.bg-input {
-    border-radius: 5px;
-    background: rgba(168, 167, 167, 0.8);
+.bg-search {
+    background: rgba(168, 167, 167, 0.6);
 }
 
+input {
+    opacity: 0.5;   
+}
 
+.content-border {
+    border-radius: 15px;
+    border: 6px solid rgba(255, 255, 255, 0.3);
+}
+
+.imgAuthor {
+    color: white;
+}

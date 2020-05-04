@@ -4,6 +4,7 @@ const getLocation = require('./utils/getLocation')
 const forecast = require('./utils/forecast')
 const getCity = require('./utils/getCity')
 const filterData = require('./utils/filterData')
+const getBgImg = require('./utils/getBgImg')
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -25,10 +26,17 @@ const dailyKeys = [
     'temperatureHigh'
 ]
 
+app.get('/bg', (req, res) => {
+    return getBgImg ((error, data) => {
+        if (error) {
+            return res.send({ error })
+        }
+        return res.send({ data })
+    })
+})
+
 app.get('/weather', (req, res) => {
     if (req.query.address) {
-
-
         return getLocation (req.query.address, (error, { latitude, longitude, location }= {}) => {
             if (error) {
                 return res.send({ error })
@@ -76,5 +84,5 @@ app.get('/weather', (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log('Server is up on port 3000.' + port)
+    console.log('Server is up on port ' + port)
 })
