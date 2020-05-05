@@ -18,7 +18,7 @@ const fetchBg = () => {
         })
     })
 }
-    
+
 fetchBg()
 cityMesg.textContent = 'Loading...'
 countryMesg.textContent = ''
