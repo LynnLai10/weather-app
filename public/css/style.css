@@ -62,7 +62,7 @@ body {
 }
 
 .text-bg {
-    padding: 5px 20px;
+    margin: 20px;
     border-radius: 8px;
     background: rgba(168, 167, 167, 0.6);
 }
@@ -82,4 +82,18 @@ input {
 
 .imgAuthor {
     color: white;
+}
+
+/* #location-bg {
+    border-radius: 4px;
+    padding: 5px 25px;
+    background: rgba(168, 167, 167, 0.6);
+} */
+
+#city, #country {
+    text-shadow:-1px 0 rgb(87, 87, 86),
+                0 1px rgb(87, 87, 86),
+                1px 0 rgb(87, 87, 86),
+                0 -1px rgb(87, 87, 86);
+    
 }

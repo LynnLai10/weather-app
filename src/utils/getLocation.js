@@ -11,7 +11,7 @@ const getLocation = (address, callback) => {
             callback('Unable to find the location!', undefined)
         } else {
             const { center, text, context } = response.body.features[0]
-            const country = context[context.length-1].text
+            const country = context? context[context.length-1].text : text
             const location = {
                 city: text.replace(' Shi', ''),
                 country: country === text ? '':country
