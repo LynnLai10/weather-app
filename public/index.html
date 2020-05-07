@@ -5,93 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="css/all.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Weather App</title>
 </head>
 <body>
-    <div class="bg-container" id="bg-container">
+    
+    <div class="container" id="container">
         <div class="blur"></div>
-        <div class="content">
-            <div class="img d-flex flex-column justify-content-between" id="bg-content">
-                <div class="d-flex justify-content-between ml-5">
-                    <div class="mt-5">
-                        <div class="d-flex align-items-baseline" id="location-bg">
-                            <div class="display-4">
-                                <p id="city"> --</p>
-                            </div>
-                            <div class="h3 ml-3 align-items-baseline">
-                                <p id="country"></p>
-                            </div>
-                        </div>
-                        
-                    </div>
-                        <div class="mt-5 mr-5 px-4 text-bg text-dark">
-                            <div class="row my-xl-3">
-                                <div class="col-4 m-auto">
-                                    <i class="fas fa-wind fa-2x"></i>
-                                </div>
-                                <div class="col-8 p-2">
-                                    <p class="m-auto">Wind Speed 
-                                        <br>
-                                        <span id="windSpeed">- -</span> km/h
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="row my-xl-3">
-                                <div class="col-4 m-auto">
-                                    <i class="fas fa-tint fa-2x pl-1"></i>
-                                </div>
-                                <div class="col-8 p-2">
-                                    <p class="m-auto"> Humidity  
-                                        <br>
-                                        <span id="humidity">- -</span>%
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="row my-xl-3">
-                                <div class="col-4 m-auto">
-                                    <i class="fas fa-umbrella fa-2x m-auto"></i>
-                                </div>
-                                <div class="col-8 p-2">
-                                    <p class="m-auto">Chang of Rain 
-                                        <br>
-                                        <span id="precipProbability">- -</span>%
-                                    </p>
-                                </div>
-                            </div>
-                    </div>
+        <div class="card">
+            <div class="card-top">
+                    <div class="card-title">
+                    <h1 id="city">- -</h1>
+                    <h2 id="country"></h2>
                 </div>
-                <div>
-                    <div class="searchBar mb-3 ml-5">
-                        <form class="input-group bg-search rounded">
-                            <input class="form-control border-dark border-r" type="text">
-                            <div class="input-group-append">
-                                <button class="btn btn-outline-dark">Search</button>
-                            </div>
-                        </form>
+                <div class="card-aside">
+                    <div class="card-aside-icon">
+                        <i class="fas fa-wind fa-2x"></i>
+                        <i class="fas fa-tint fa-2x"></i>
+                        <i class="fas fa-umbrella fa-2x"></i>
                     </div>
-                    <div class="content-bottom" >
-                        <div class="row py-4 ml-xl-5 ml-3 px-4">
-                            <div class="row col-xl-3 justify-content-center">
-                                <div class="d-flex content-border align-items-center justify-content-center px-3">
-                                    <i class="fas fa-sun fa-5x" id="icon"></i>
-                                    <p class="display-3 mt-2 ml-4">
-                                        <span id="temperature">-</span>&deg;
-                                    </p>
-                                </div>
-                                                        
-                            </div>
-                            <div class="row col-xl-9 ml-xl-2 pt-xl-0 pt-4" id="panel"></div>
+                    <div class="card-aside-item">
+                        <div>
+                            <p>Wind Speed</p>
+                            <p>
+                                <span id="windSpeed">- -</span> km/h
+                            </p>
+                        </div>
+                        <div>
+                            <p>Humidity</p>
+                            <span id="humidity">- -</span>%
+                        </div>
+                        <div>
+                            <p>Chance of Rain</p>
+                            <p>
+                                <span id="precipProbability">- -</span>%
+                            </p>
                         </div>
                     </div>
-                
                 </div>
-                    
+            </div>
+            <div class="card-middle">
+                <form class="search-bar" >
+                    <input type="text">
+                    <button class="btn">Search</button>
+                </form>
+            </div>
+            <div class="card-bottom">
+                <div class="weather-now">
+                    <i class="fas fa-sun fa-5x" id="icon"></i>
+                    <h1 class="">
+                        <span id="temperature">--</span>&deg;
+                    </h1>
+                </div>
+                <div class="forecast" id="panel"></div>
             </div>
         </div>
-        <div class="text-right">
-            <p id="imgAuthor" class="p-2 text-light">Photo: Eros Pagotto</p>
-        </div>
+        <p id="imgAuthor">Photo: Eros Pagotto</p>
     </div>
     <script type="module" src="js/app.js"></script>
 </body>

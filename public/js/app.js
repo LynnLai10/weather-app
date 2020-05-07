@@ -8,11 +8,9 @@ const fetchBg = () => {
         response.json().then(data => {
             if(data.error) {
                 console.log('Unable to get background image.')
-                document.getElementById('bg-container').style.backgroundImage = "url('../img/bg.jpg')"
-                document.getElementById('bg-content').style.backgroundImage = "url('../img/bg.jpg')"
+                document.getElementById('container').style.backgroundImage = "url('../img/bg.jpg')"
             } else {
-                document.getElementById('bg-container').style.backgroundImage = "url("+data.data.url+")"
-                document.getElementById('bg-content').style.backgroundImage = "url("+data.data.url+")"
+                document.getElementById('container').style.backgroundImage = "url("+data.data.url+")"
                 document.getElementById('imgAuthor').textContent = `Photo: ${data.data.userName}`
             }
         })
@@ -27,14 +25,10 @@ countryMesg.textContent = ''
 const panel = document.getElementById('panel')
 for ( let i = 0 ; i < 7 ; i++ ) {
     panel.innerHTML += `
-        <div class="col text-center">
-            <p class="h5 pb-2">-</p>
-            <i class="fas fa-sun fa-3x"></i>
-            <p class="pt-3 h6">
-                <span id="temperatureLow0">  </span>
-                -
-                <span id="temperatureHigh0">  </span>
-            </p>
+        <div class="forecast-items">
+            <h3 class="forecast-item">Today</h3>
+            <i class="fas fa-sun fa-2x forecast-item"></i>
+            <h3 class="forecast-item"> &deg;- &deg;</h3>
         </div>
     `
 }
@@ -55,14 +49,10 @@ const renderDaily = (data) => {
     panel.innerHTML = ''
     for ( let i = 0 ; i < 7 ; i++ ) {
         panel.innerHTML += `
-            <div class="col text-center ">
-                <p class="h5 pb-2">${data[i].time}</p>
-                <i class="fas ${data[i].icon} fa-3x"></i>
-                <p class="pt-3 h6">
-                    <span id="temperatureLow0">${data[i].temperatureLow}</span>&deg;
-                    -
-                    <span id="temperatureHigh0">${data[i].temperatureHigh}</span>&deg;
-                </p>
+            <div class="forecast-items">
+                <h3 class="forecast-item">${data[i].time}</h3>
+                <i class="fas ${data[i].icon} fa-2x forecast-item"></i>
+                <h3 class="forecast-item">${data[i].temperatureLow}&deg;-${data[i].temperatureHigh}&deg;</h3>
             </div>
         `
     }
