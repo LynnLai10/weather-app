@@ -87,7 +87,7 @@ navigator.geolocation.getCurrentPosition(myWeather)
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault()
     fetchBg()
-    const location = search.value
+    const location = search.value.trim().replace(' ','')
     const url = `/weather?address=${location}`
     cityMesg.textContent = 'Loading...'
     countryMesg.textContent = ''
