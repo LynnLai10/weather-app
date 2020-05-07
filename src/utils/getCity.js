@@ -11,7 +11,7 @@ const getCity = (longitude, latitude, callback) => {
             callback('Unable to find the location!', undefined)
         } else {
             const { center, text, context } = response.body.features[0]
-            const country = context[context.length-1].tex
+            const country = context[context.length-1].text
             const location = {
                 city: text,
                 country: country === text ? '':country
