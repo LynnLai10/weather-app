@@ -12,6 +12,8 @@ const filterData = (originalData, keys) => {
                 case 'time': 
                     if ( i === 0 ) {
                         filteredDatum[key] = 'Today';
+                    } else {
+                        filteredDatum[key] = filteredDatum[key];
                     }
                     break;
                 case 'temperature': 
