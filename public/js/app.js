@@ -47,7 +47,7 @@ const renderCurrently = (data) => {
 //Render Daily Data
 const renderDaily = (data) => {
     panel.innerHTML = ''
-    for ( let i = 1 ; i < 7 ; i++ ) {
+    for ( let i = 1 ; i < data.length ; i++ ) {
         panel.innerHTML += `
             <div class="forecast-items">
                 <h3 class="forecast-item">${data[i].time}</h3>
