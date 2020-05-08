@@ -12,8 +12,6 @@ const filterData = (originalData, keys) => {
                 case 'time': 
                     if ( i === 0 ) {
                         filteredDatum[key] = 'Today';
-                    } else {
-                        filteredDatum[key] = moment.unix(data[key]).day();
                     }
                     break;
                 case 'temperature': 
