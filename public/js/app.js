@@ -80,8 +80,6 @@ const myWeather = (position) => {
     fetchData(url)
 }
 
-
-
 navigator.geolocation.getCurrentPosition(myWeather)
 
 weatherForm.addEventListener('submit', (e) => {

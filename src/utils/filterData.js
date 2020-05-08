@@ -11,7 +11,7 @@ const filterData = (originalData, keys) => {
             switch (key) {
                 case 'time': 
                     if ( i === 0 ) {
-                        filteredDatum[key] = 'Today'
+                        filteredDatum[key] = 'Today';
                     } else {
                         filteredDatum[key] = dayOfWeek[moment.unix(data[key]).day()];
                     }
