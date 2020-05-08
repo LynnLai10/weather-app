@@ -13,7 +13,7 @@ const filterData = (originalData, keys) => {
                     if ( i === 0 ) {
                         filteredDatum[key] = 'Today';
                     } else {
-                        filteredDatum[key] = data[key];
+                        filteredDatum[key] = moment.unix(data[key]);
                     }
                     break;
                 case 'temperature': 
