@@ -1,6 +1,5 @@
 const moment = require('moment')
 const dayOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
-
 const filterData = (originalData, keys) => {
     const filteredData = []
     for ( i = 0  ; i < originalData.length ; i++ ) {
@@ -10,10 +9,10 @@ const filterData = (originalData, keys) => {
             const key = keys[j]
             switch (key) {
                 case 'time': 
-                    if ( i === 0 ) {
+                    if ( i === 1 ) {
                         filteredDatum[key] = 'Today';
-                    } else {
-                        filteredDatum[key] = moment.unix(data[key]);
+                    } else if ( i > 1 ) {
+                        filteredDatum[key] = dayOfWeek[moment.unix(data[key]).utc().day()];
                     }
                     break;
                 case 'temperature': 
