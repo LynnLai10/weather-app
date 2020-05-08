@@ -13,8 +13,7 @@ const filterData = (originalData, keys) => {
                     if ( i === 0 ) {
                         filteredDatum[key] = 'Today';
                     } else {
-                        filteredDatum[key] = dayOfWeek[moment.unix(data[key]).day()];
-                        console.log(moment.unix(data[key]), data[key]);
+                        filteredDatum[key] = data[key];
                     }
                     break;
                 case 'temperature': 
